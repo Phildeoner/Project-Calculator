@@ -8,8 +8,8 @@ const display = document.getElementById("display");
 const buttons = document.querySelectorAll("button");
 
 //Create a performEvent Function to be called on click
-function performEvent(e) {
-    const value = e.target.value;
+function performEvent(buttons) {
+    const value = buttons.target.value;
     if (!isNaN(value) || value === ".") {
       if (!operatorSet) {
         firstNumber += value;
@@ -44,3 +44,4 @@ function performEvent(e) {
         operatorSet = true;
     }
 }
+buttons.forEach((button) => {button.addEventListener("click", performEvent)});
