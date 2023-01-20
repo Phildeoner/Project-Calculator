@@ -44,8 +44,8 @@ function performEvent(buttons) {
         operatorSet = true;
     }
 }
-buttons.forEach((button) => {button.addEventListener("click", performEvent)});
 
+//performOperation Function to perform the desired operation
 function performOperation() {
     let result = 0;
     let currentNumber = parseFloat(firstNumber);
@@ -78,3 +78,5 @@ function performOperation() {
     operator = "";
     display.value = result;
 }
+
+buttons.forEach((button) => {button.addEventListener("click", performEvent)});
