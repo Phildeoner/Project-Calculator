@@ -7,7 +7,6 @@ let previousResult = 0;
 const display = document.getElementById("display");
 const buttons = document.querySelectorAll("button");
 
-//Create a performEvent Function to be called on click
 function performEvent(buttons) {
     const value = buttons.target.value;
     if (!isNaN(value) || value === ".") {
@@ -28,10 +27,8 @@ function performEvent(buttons) {
       display.value = "";
     } else if (value === "=") {
         if (secondNumber === "" && operator !== "") {
-          // add error class to display element
           display.classList.add("error");
           setTimeout(() => {
-            // remove error class after 1 sec
             display.classList.remove("error");
           }, 1000);
           return;
@@ -45,7 +42,6 @@ function performEvent(buttons) {
     }
 }
 
-//performOperation Function to perform the desired operation
 function performOperation() {
     let result = 0;
     let currentNumber = parseFloat(firstNumber);
@@ -60,10 +56,8 @@ function performOperation() {
         result = currentNumber * parseFloat(secondNumber);
     } else if (operator === "/") {
         if (secondNumber == 0) {
-            // add error class to display element
             display.classList.add("error");
             setTimeout(() => {
-            // remove error class after 1 sec
             display.classList.remove("error");
             }, 1000);
             return;
